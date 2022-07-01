@@ -2,11 +2,19 @@ vcenter:
   ip: 10.0.0.10
   admin_username: administrator@vsphere.local
   admin_password: Password1!
-  datacenter: dc0
-  cluster: LAB
-  datastore: ds0
-  network: 10.0.0.x-24
-  folder: openshift4
+  environments:
+  - name: lab
+    datacenter: dc0
+    cluster: LAB
+    datastore: ds0
+    network: 10.0.0.x-24
+    folder: openshift4-lab
+  - name: dev
+    datacenter: dc0
+    cluster: DEV
+    datastore: ds3
+    network: 10.0.1.x-24
+    folder: openshift4-dev
   create_folder: True
 openshift:
   vcenter_svc_account: OCP4Admin@vsphere.local
